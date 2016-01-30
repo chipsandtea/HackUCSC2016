@@ -9,13 +9,17 @@ import java.util.HashMap;
 public class Group {
     private int groupID;
     private String groupName;
-    private HashMap<Member, > members;
+    private ArrayList<Integer> admins;
+    private HashMap<Integer, Member> members;
     private ArrayList<Payment> paymentHistory;
 
-    public Group(int ID, String name, Member creator){
+    public Group(int ID, String name, Member creator) {
         groupID = ID;
         groupName = name;
-        members.add(creator);
+        members = new HashMap<Integer, Member>();
+        members.put(creator.getID(), creator);
+        admins = new ArrayList<Integer>();
+        admins.add(creator.getID());
     }
 
     public int getGroupID(){
