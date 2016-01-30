@@ -6,5 +6,5 @@ package com.example.christopher.ome;
 public class Member {
 
     private int memberID;
-    
+
 }
